@@ -1,0 +1,14 @@
+let photos=[];let currentPhoto=0;
+const photoGrid=document.getElementById('photoGrid');
+const videoGrid=document.getElementById('videoGrid');
+fetch('assets/memories.json').then(r=>r.json()).then(data=>{
+ photos=data.photos; const videos=data.videos;
+ document.getElementById('photoCount').textContent=`${photos.length} photos · ${videos.length} videos · ${photos.length+videos.length} memories`;
+ photos.forEach((file,i)=>{const b=document.createElement('button');b.className='photo-tile';b.setAttribute('aria-label',`Open memory ${i+1}`);const im=document.createElement('img');im.src=`assets/memories/${file}`;im.loading='lazy';im.alt=`Friendship memory ${i+1}`;b.appendChild(im);b.addEventListener('click',()=>showPhoto(i));photoGrid.appendChild(b)});
+ videos.forEach((file,i)=>{const wrap=document.createElement('div');const v=document.createElement('video');v.src=`assets/memories/${file}`;v.controls=true;v.preload='metadata';v.playsInline=true;wrap.appendChild(v);const label=document.createElement('div');label.className='video-label';label.textContent=`Little clip ${i+1}`;wrap.appendChild(label);videoGrid.appendChild(wrap)});
+}).catch(()=>{document.getElementById('photoCount').textContent='Could not load the memory album. Please keep the assets folder beside index.html.'});
+function showPhoto(i){currentPhoto=i;document.getElementById('lightboxImg').src=`assets/memories/${photos[i]}`;document.getElementById('lightboxCaption').textContent=`Memory ${i+1} of ${photos.length}`;document.getElementById('lightbox').classList.add('show')}
+function closePhoto(){document.getElementById('lightbox').classList.remove('show')}
+document.getElementById('closeLightbox').onclick=closePhoto;document.getElementById('prevPhoto').onclick=()=>showPhoto((currentPhoto-1+photos.length)%photos.length);document.getElementById('nextPhoto').onclick=()=>showPhoto((currentPhoto+1)%photos.length);document.getElementById('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')closePhoto()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closePhoto();if(e.key==='ArrowRight'&&document.getElementById('lightbox').classList.contains('show'))showPhoto((currentPhoto+1)%photos.length);if(e.key==='ArrowLeft'&&document.getElementById('lightbox').classList.contains('show'))showPhoto((currentPhoto-1+photos.length)%photos.length)});
+const envelope=document.getElementById('envelope');document.getElementById('openLetter').addEventListener('click',()=>{envelope.classList.toggle('open');document.getElementById('tapHint').textContent=envelope.classList.contains('open')?'Your letter is open ♡':'Tap to open your letter'});
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('nav').classList.toggle('show'));document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('show')));
