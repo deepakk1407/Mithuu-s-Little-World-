@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff0f6" />
+  <title>Mithuu's Little World ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sparkle sparkle-one">✦</div><div class="sparkle sparkle-two">♡</div><div class="sparkle sparkle-three">✧</div>
+  <header class="topbar"><a class="brand" href="#home">🐼 <span>Mithuu's Little World</span></a><button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button><nav id="nav"><a href="#memories">Memories</a><a href="#videos">Little clips</a><a href="#letter">A letter</a><a href="#forever">Our friendship</a></nav></header>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-card">
+        <div class="eyebrow">A tiny place made with lots of love & friendship</div>
+        <div class="panda">🐼</div>
+        <h1>Hey, Mithuuu!<br><em>Welcome to your little world.</em></h1>
+        <p class="hero-copy">A collection of moments, silly smiles, unforgettable days and all the little things that make our friendship ours.</p>
+        <a class="primary-btn" href="#memories">Come, let's remember <span>♡</span></a>
+        <div class="hero-foot">Made by Deepak · just for my Kutty Panda</div>
+      </div>
+      <div class="floating-note note-a">72 photos 📸</div><div class="floating-note note-b">10 little clips 🎞️</div>
+    </section>
+
+    <section class="section" id="memories">
+      <div class="section-heading"><span class="eyebrow">PHOTO ALBUM</span><h2>Little moments, <em>big memories.</em></h2><p>Every picture holds a moment worth keeping.</p></div>
+      <div class="memory-count" id="photoCount">Loading our memories…</div>
+      <div class="photo-grid" id="photoGrid"></div>
+    </section>
+
+    <section class="section video-section" id="videos">
+      <div class="section-heading"><span class="eyebrow">MOVING MEMORIES</span><h2>Little clips, <em>forever feels.</em></h2><p>Press play and relive these moments.</p></div>
+      <div class="video-grid" id="videoGrid"></div>
+    </section>
+
+    <section class="letter-section section" id="letter">
+      <div class="section-heading"><span class="eyebrow">A LETTER FOR YOU</span><h2>Something I wanted <em>you to read.</em></h2><p>Tap the envelope. Take your time. ♡</p></div>
+      <button class="envelope-wrap" id="openLetter" aria-label="Open your letter">
+        <div class="envelope" id="envelope"><div class="envelope-back"></div><div class="letter-paper"><div class="paper-content"><div class="paper-heart">♡</div><h3>To my Kutty Panda,</h3><p>Some friendships become a part of our everyday life without us even noticing. You are one of those people who made ordinary moments feel special.</p><p>We've shared laughs, random talks, little misunderstandings and memories that I never want to forget. Even when things aren't perfect, I genuinely wish the best for you.</p><p>Thank you for being you, Mithuuu. I hope life gives you countless reasons to smile. No matter how busy life gets, these memories will always have a special place.</p><p class="sign">With lots of care,<br><strong>Deepak</strong> ♡</p></div></div><div class="envelope-front"></div><div class="envelope-flap"></div><div class="seal">🐼</div></div>
+        <span class="tap-hint" id="tapHint">Tap to open your letter</span>
+      </button>
+      <p class="letter-instruction">Tap the envelope again to close it.</p>
+    </section>
+
+    <section class="greeting-section section" id="greeting">
+      <div class="greeting-card"><div class="greeting-flower">✿</div><span class="eyebrow">A LITTLE GREETING</span><h2>For my favourite <em>panda person.</em></h2><p>May your days be filled with happy surprises, peaceful moments, big dreams and people who remind you how wonderful you are.</p><div class="greeting-sign">Keep smiling, Mithuuu! ♡</div><div class="greeting-panda">🐼</div></div>
+    </section>
+
+    <section class="section extra-section" id="forever">
+      <div class="section-heading"><span class="eyebrow">OUR LITTLE CORNER</span><h2>Not just photos. <em>Our story.</em></h2></div>
+      <div class="memory-notes">
+        <article><span>01</span><h3>The random laughs</h3><p>The moments when even the smallest thing became the funniest thing ever.</p></article>
+        <article><span>02</span><h3>The little talks</h3><p>All those conversations that turned an ordinary day into a memorable one.</p></article>
+        <article><span>03</span><h3>Through every mood</h3><p>Happy days, difficult days and everything in between — each one is part of our story.</p></article>
+      </div>
+      <div class="final-note" id="finalNote"><div class="panda">🐼</div><h2>82 memories. <em>One special friendship.</em></h2><p>103 was the number we first imagined; this little album now holds 72 photos and 10 videos. Every single one matters.</p><strong>Forever my Kutty Panda — Deepak ♡</strong></div>
+    </section>
+  </main>
+  <footer>Made with care, for Mithuuu ♡ <span>·</span> MITHUU'S LITTLE WORLD</footer>
+  <div class="lightbox" id="lightbox"><button id="closeLightbox" aria-label="Close">×</button><button class="lb-arrow" id="prevPhoto" aria-label="Previous photo">‹</button><img id="lightboxImg" alt="Memory enlarged"><button class="lb-arrow" id="nextPhoto" aria-label="Next photo">›</button><div id="lightboxCaption"></div></div>
+  <script src="script.js"></script>
+</body></html>
